@@ -1,0 +1,42 @@
+<!-- Hero Image Section -->
+    <section class="hero">
+      <div class="overlay">
+        <div class="aboutus">
+          <h2>​Operations Team</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operations Team Section -->
+    <div class="container">
+      <section class="operations-team">
+        <h2 class="operations-team-title"><span>|</span> ​Operations Team</h2>
+        <p>
+          AVPE works with independent consultants in Palestine, recruiting them
+          in line with the needs of each roject. This allows us to pull from a
+          diversity of skill sets that best serve our partner’s needs. In the
+          United States, AVPE President Matt Ley works with partners on both
+          sides of the ocean to connect them with the appropriate advisors and
+          consultants.
+        </p>
+        <section>
+          <article>
+            <span class="team-member-name">{{item.name}}</span>
+            <p class="title-job">{{item.employment}}</p>
+            <p class="team-member-overview">
+              {{item.description}}
+            </p>
+            <div class="social-icons">
+              <ng-template *ngFor="let social_link of item.social_links">
+              <a href="{{item.social_links[social_link.id]}}"><img src="{{social_link.icon}}" alt=""/></a></ng-template>
+            </div>
+          </article>
+          <div class="operations-team-img">
+            <img
+              src="{{item.image}}"
+              alt=""
+            />
+          </div>
+        </section>
+      </section>
+    </div>

@@ -1,0 +1,39 @@
+    <!-- Hero Image Section -->
+    <section class="hero">
+      <div class="overlay">
+        <div class="export-circles">
+          <h2>{{item.title}}</h2>
+          <div>
+            <a href=""
+              >Success Stories
+              <i style="color: #fff" class="fa-solid fa-angle-right"></i
+            ></a>
+            <a style="color: #6a994e" href="">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Posts Section -->
+    <div class="container">
+      <div class="all-posts my-4">
+        <i class="fa-solid fa-angle-left"></i>
+        <a href="success-stories">All Posts</a>
+      </div>
+      <span>{{item.title}}</span>
+      <p>{{item.published_date}} | Success Stories</p>
+      <div class="export-circles-image">
+        <img
+          class="w-100 my-3"
+          src="{{item.image}}"
+          alt=""
+        />
+      </div>
+      {{item.description}}
+      <p class="author">{{item.publisher}}</p>
+      <p class="title-job">{{item.job_title}}</p>
+      <div class="share-post" *ngIf="item.social_links">
+        <span>Share This Post:</span>
+        <a   *ngFor="let social_link of socialLinks" href="{{item.social_links[social_link.id]}}"><img src="{{social_link.icon}}" alt=""/></a>
+      </div>
+    </div>

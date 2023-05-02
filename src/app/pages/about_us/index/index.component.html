@@ -1,0 +1,195 @@
+    <!-- Hero Image Section -->
+    <section class="hero">
+      <div class="overlay">
+        <div class="aboutus">
+          <h2>About Us</h2>
+          <div>
+            <a href="javascript:;" [ngClass]="{'active-link': type == 'our_vision'}"  (click)="changeType('our_vision')"
+              >Our Vision
+              <i style="color: #fff" class="fa-solid fa-angle-right icon"></i
+            ></a>
+            <a href="javascript:;" (click)="changeType('founders')" [ngClass]="{'active-link': type == 'founders'}"
+              >​From Our Co-Founders
+              <i style="color: #fff" class="fa-solid fa-angle-right icon"></i
+            ></a>
+            <a href="javascript:;" (click)="changeType('directors')" [ngClass]="{'active-link': type == 'directors'}">​Board of Directors</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <div *ngIf="type == 'index'" class="container">
+      <div class="row my-5 text-center align-items-center aboutus-section">
+        <article class="col-lg-6 col-sm-12">
+          <p [innerHtml]='details.about_us_home.description'>
+            
+          </p>
+        </article>
+        <div class="aboutus-img col-lg-6 col-sm-12 mt-md-5">
+          <img
+            src="{{details.home_image}}"
+            alt="aboutus-img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- The Core Team Section -->
+    <div *ngIf="type == 'index'" class="container">
+      <h2 class="text-center fw-bold my-5">The Core Team</h2>
+      <div class="core-team">
+        <div class="row align-items-center text-center row-gap-5">
+          <div *ngFor="let partner of details.partners" class="col-lg-2 col-md-4 row-gap-5">
+            <img src="{{partner.image}}" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="type == 'our_vision'" class="container">
+      <section class="about-us-vision">
+        <article>
+          <span>Our Vision</span>
+          <p [innerHtml]='details.about_us_our_vision.our_vision' class="our-vision">
+            
+          </p>
+          <span>Our Mission:</span>
+          <p class="our-mission">
+            AVPE seeks to promote the ongoing development of a vibrant and
+            sustainable economy in Palestine by building bridges and supporting
+            the
+            <br />
+            indigenous business community.
+          </p>
+        </article>
+      </section>
+      <section class="our-mission-section">
+        <div>
+          <div class="avatar">
+            <img src="../../assets/about-images/avatar.png" alt="" />
+          </div>
+          <div class="quote">
+            <blockquote>
+              " A free, independent and growing Palestinian economy will make
+              the entire region more secure. <br />
+              Every business transaction and job created plants another seed of
+              hope so that Palestinians can <br />
+              constructively engage to build a future of freedom and economic
+              independence. As impediments <br />
+              on the ground lift, these lasting relationships and investments
+              will support vibrant economic <br />
+              expansion.”
+            </blockquote>
+          </div>
+        </div>
+        <p>
+          When Americans do business with Palestinians, their involvement brings
+          not only new technology and markets but also a backbone of support
+          <br />
+          that helps Palestinians to overcome the array of obstacles they face.
+          By learning about Palestine, Americans challenge their own perceptions
+          <br />
+          about the people and the conflict, laying the groundwork for better
+          policies. Through connections to Americans, the Palestinian business
+          <br />
+          community becomes more engaged and less isolated. Palestinian
+          businesses produce numerous goods and products that are ripe for
+          <br />
+          development and scale-up for the vast U.S. market. And Americans and
+          Palestinians working together create hope and a glimpse of <br />
+          economic independence—a future in which Palestinians can compete
+          globally on a level playing field.
+        </p>
+      </section>
+    </div>
+
+    <div *ngIf="type == 'founders'" class="container">
+      <!-- About Us Section -->
+      <section class="about-us-founders">
+        <article>
+          <p class="co-founders-title">
+            <span style="color: var(--green-color)">|</span> ​From Our
+            Co-Founders
+          </p>
+          <p class="co-founders">
+            from the
+            <span style="color: var(--green-color); font-weight: bold"
+              >{{details.co_founders_data.from_date}}-{{details.co_founders_data.to_date}}</span
+            >
+            Triennial Report
+          </p>
+          <div class="coFounder-image" [ngStyle]="{'background': ' url(' + details.founder_image  + ')'}">
+            <div class="overlay-content">
+              <span
+                >{{details.co_founders_data.title}}</span
+              >
+            </div>
+          </div>
+          <span class="stakeholders-title">Dear stakeholders,</span>
+          <p class="stakeholders-details" [innerHtml]='details.co_founders_data.description'>
+            </p>
+        </article>
+      </section>
+
+      <!-- Timeline Section -->
+      <div class="timeline">
+        <div class="outer">
+          <div class="wrapper" *ngFor="let period of details.periods" >
+            <div class="info-row">
+              <div class="info">
+                <span class="date">{{period.year}}</span>
+                <div class="info-details">
+                 {{period.description}}
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <section *ngIf="type == 'directors'" class="about-us-directors">
+      <div class="container"><span>​Board of Directors</span></div>
+      <div *ngFor="let director of details.directors;let o = odd;let e = even">
+        <section  *ngIf="o" class="directors reverse-column">
+          <div class="director-img">
+            <img src="{{director.image}}" alt="" />
+          </div>
+          <article>
+            <a [routerLink]="['/director/'+director.id]" style="color: #000 icon"
+              ><span style="color: #8547ff">|</span> {{director.name}}</a
+            >
+            <p>{{director.employment}}</p>
+            <p>
+              {{director.description}}
+            </p>
+            <div class="social-icons">
+               <a   *ngFor="let social_link of details.socialLinks" href="{{director.social_links[social_link.id]}}"><img src="{{social_link.icon}}" alt=""/></a>
+               
+              
+            </div>
+          </article>
+        </section>
+        <section  *ngIf="e" class="reverse-directors">
+          <article>
+            <a [routerLink]="['/director/'+director.id]" style="color: #000 icon"
+              ><span style="color: #8547ff">|</span> {{director.name}}</a>
+            <p>{{director.employment}}</p>
+            <p>
+              {{director.description}}
+            </p>
+            <div class="social-icons">
+              <a   *ngFor="let social_link of details.socialLinks" href="{{director.social_links[social_link.id]}}"><img src="{{social_link.icon}}" alt=""/></a>
+                  
+             
+            </div>
+          </article>
+          <div class="reverse-director-img">
+            <img src="{{director.image}}" alt="" />
+          </div>
+        </section>
+      </div>
+    </section>

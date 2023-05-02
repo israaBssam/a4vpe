@@ -1,0 +1,352 @@
+.hero {
+    height: 500px;
+    background-image: url('../assets/company-guides-images/mortgage-application.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.add-company {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+}
+
+.add-company>button {
+    width: 200px;
+    padding: 15px;
+    border-radius: 100px;
+    font-size: 1em;
+    background: var(--white-color);
+    border: none;
+    cursor: pointer;
+}
+
+.search {
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+}
+
+.search>input {
+    width: 300px;
+    padding: 15px 30px;
+    border-radius: 150px;
+    background: transparent;
+    border: 1px solid var(--white-color);
+    outline: none;
+    color: var(--white-color);
+}
+
+.search>input::placeholder {
+    color: var(--white-color);
+    padding: 1.25em;
+    text-align: start;
+}
+
+.support-share-profile-btns {
+    display: flex;
+    margin-left: auto;
+    margin-right: 3%;
+    margin-top: auto;
+    margin-bottom: 3%;
+    column-gap: 20px;
+}
+
+.support-share-profile-btns>button {
+    width: 200px;
+    padding: 10px;
+    border-radius: 100px;
+    border: none;
+    z-index: 1;
+}
+
+.support-share-profile-btns>button:first-child {
+    background: var(--white-color);
+}
+
+.support-share-profile-btns>button:last-child {
+    background: transparent;
+    border: 1px solid var(--white-color);
+    color: var(--white-color);
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 100px;
+}
+
+.about>article:first-child {
+    margin-top: -10%;
+}
+
+.about>article>div>img {
+    position: relative;
+    bottom: 70px;
+    z-index: 1;
+}
+
+.about>article:last-child {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.about>article>span,
+.social-info>span {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.about>article:last-child>p {
+    font-size: 1.25em;
+    line-height: 1.7;
+}
+
+.social-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: -40px;
+}
+
+.company-guide-location,
+.company-guide-info {
+    display: flex;
+    align-items: center;
+    column-gap: 13.5px;
+}
+
+.company-guide-social-icons {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.views-likes {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.location-details {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.contact-info>span {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.details-info-row {
+    display: flex;
+    column-gap: 60px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.contact-info-row {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.contact-info-column {
+    margin-top: 50px;
+}
+
+.contact-info-column>.details-info-row>.details-row>span {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) and (max-width: 912px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    .about>article:first-child {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+        margin-top: 0;
+    }
+
+    .about>article>div>img {
+        position: static;
+        margin-top: 50px;
+    }
+
+    .location-details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    iframe {
+        width: 90%;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .add-company {
+        left: 28%;
+    }
+
+    .search {
+        position: absolute;
+        top: 30%;
+        z-index: 1;
+    }
+
+    .search>input {
+        width: 400px;
+    }
+
+    .support-share-profile-btns {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 40px;
+    }
+
+    .about>article:first-child {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        margin-top: 0;
+    }
+
+    .about>article>div>img {
+        position: static;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .social-info {
+        margin-top: 20px;
+    }
+
+    .location-details {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    .support-share-profile-btns {
+        margin-right: auto;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .about>article>div>img {
+        width: 100%;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 14px;
+    }
+}

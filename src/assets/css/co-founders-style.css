@@ -1,0 +1,225 @@
+.hero {
+    height: 500px;
+    background-image: url('../../assets/about-images/hero-img.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.aboutus {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.aboutus>h2 {
+    text-align: center;
+    font-size: 2.25em;
+    font-weight: bold;
+    color: var(--white-color) !important;
+}
+
+.aboutus>div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.aboutus>div>a {
+    font-size: 1.55em;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.aboutus>div>a:hover {
+    color: var(--green-color);
+    transition: 0.5s;
+}
+
+.about-us>article {
+    position: relative;
+}
+
+.aboutus>h2 {
+    text-align: center;
+    font-size: 2.25em;
+    font-weight: bold;
+    color: var(--green-color);
+}
+
+.aboutus>div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.aboutus>div>a {
+    font-size: 1.55em;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.aboutus>div>a:hover {
+    color: var(--green-color);
+    transition: 0.5s;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us>article>.co-founders-title {
+    font-size: 1.55em;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.about-us>article>p {
+    line-height: 35px;
+}
+
+.about-us>article>.co-founders {
+    font-size: 1.1em;
+}
+
+.about-us>article>.co-founders {
+    font-size: 1.25em;
+}
+
+.coFounder-image {
+    background-image: url(../assets/about-images/co-founders.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 53px;
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.coFounder-image>.overlay-content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.28);
+    border-radius: 53px;
+    padding: 625px 60px 45px 60px;
+}
+
+.coFounder-image>.overlay-content>span {
+    font-size: 1.1em;
+    color: var(--white-color);
+    font-weight: bold;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+}
+
+.stakeholders-details {
+    font-size: 1.25em;
+}
+
+.stakeholders-details-bold {
+    font-weight: bold;
+}
+
+/* Timeline Container */
+.timeline {
+    margin: 4% 4%;
+    padding: 20px;
+}
+
+/* Outer Layer with the timeline border */
+.outer {
+    border-left: 2px solid #f0f0f0;
+}
+
+/* Card container */
+.wrapper {
+    position: relative;
+    margin: 0 0 20px 20px;
+    padding: 10px;
+    color: var(--black-color);
+    border-radius: 8px;
+}
+
+/* Information about the timeline */
+
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    margin: 5% 0;
+    font-size: 1.25em;
+    line-height: 1.7;
+}
+
+/* Title of the card */
+.date {
+    color: var(--green-color);
+    position: relative;
+    font-size: 1.25em;
+}
+
+/* Timeline dot  */
+.date::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: var(--white-color);
+    border-radius: 999px;
+    left: -40px;
+    bottom: 8px;
+    border: 3px solid #f0f0f0;
+}
+
+@media screen and (max-width: 912px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .aboutus>div {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .aboutus>div>a>.icon {
+        display: none;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 0.9em;
+    }
+}

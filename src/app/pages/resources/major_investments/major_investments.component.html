@@ -1,0 +1,206 @@
+
+    <!-- Hero Image Section -->
+    <section class="major_inv_hero">
+      <div class="overlay">
+        <div class="resources"  [ngClass]="{'resources_buy_palestine': type === 'buy_palestinian'}">
+          <h2>Resources</h2>
+          <div>
+            <a class="active-link" href="javascript:;" [ngClass]="{'active-link': type == 'major_investments'}"  (click)="changeType('major_investments')"
+              >​Major Investments
+            </a>
+            <i class="fa-solid fa-angle-right text-white icon"></i>
+            <a href="javascript:;" [ngClass]="{'active-link': type == 'economic_reports'}"  (click)="changeType('economic_reports')"
+              >​Economic Reports
+            </a>
+            <i class="fa-solid fa-angle-right text-white icon"></i>
+            <a href="javascript:;" [ngClass]="{'active-link': type == 'palestine_trade_association'}"  (click)="changeType('palestine_trade_association')"
+              >​Palestine Trade Association
+            </a>
+            <i class="fa-solid fa-angle-right text-white icon"></i>
+            <a href="javascript:;" [ngClass]="{'active-link': type == 'efforts'}"  (click)="changeType('efforts')">Related Efforts </a>
+            <i class="fa-solid fa-angle-right text-white icon"></i>
+            <a href="javascript:;" [ngClass]="{'active-link': type == 'buy_palestinian'}"  (click)="changeType('buy_palestinian')"
+              >​Buy Palestinian in the U.S.</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Investment Section -->
+    <div *ngIf="type == 'major_investments'" class="container my-5">
+      <span>​Major Investments</span>
+      <p [innerHtml] = 'description'>
+        
+      </p>
+      <span>Investments</span>
+      <div class="row my-3">
+        <div *ngFor="let investment of investments" class="col-lg-3 col-md-6 col-sm-12">
+          <div class="investments-image">
+            <img src="{{investment.image}}" alt="" />
+          </div>
+          <p class="text-center my-3 fw-bold">
+            {{investment.title}}
+          </p>
+        </div>
+      </div>
+      <p class="banks mt-5">Banks</p>
+      <div class="row my-3">
+        <div *ngFor="let bank of banks" class="col-lg-3 col-md-6 col-sm-12">
+          <div class="investments-image">
+            <img
+              src="{{bank.image}}"
+              alt=""
+            />
+          </div>
+          <p class="text-center my-3 fw-bold">{{bank.title}}</p>
+        </div>
+       
+      </div>
+
+    </div>
+
+    <!-- Economic Reports Section -->
+    <div *ngIf="type == 'economic_reports'" class="container my-5">
+      <span class="fw-bold">PALTRADE Potential Market Reports</span>
+      <div class="row my-4">
+        <div class="col-lg-3">Time (ET)</div>
+        <div class="col-lg-3">Report</div>
+      </div>
+      <hr />
+      <div *ngFor="let report of economic_reports | keyvalue">
+        <div class="row my-4">
+          <!-- <div class="col-lg-3">MONDAY, JAN. 9</div> -->
+          <!-- <div class="col-lg-3">{{report}}</div> -->
+          <div class="col-lg-3">{{report.key| date: 'EEEE, MMMM. d'}}</div>
+        </div>
+        <hr />
+        <div *ngFor="let time of report.value">
+          <div class="row my-4">
+            <div class="col-lg-3">{{time.time | convertFrom24To12Format}}</div>
+            <div class="col-lg-3 text-red-underlined"><a target="_blank" href="{{time.link}}">{{time.title}}</a></div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <!-- Palestine Trade Association Section -->
+    <div *ngIf="type == 'palestine_trade_association'" class="container my-5">
+      <span>Private Sector Coordinating Council (PSCC)</span>
+      <p [innerHtml] = 'description'>
+        
+      </p>
+      <br />
+      <span
+        >The following organizations are members of the Private Sector
+        Coordination Council (PSCC):</span
+      >
+      <div class="row my-3">
+        <div *ngFor="let organization of organizations" class="col-lg-3 col-md-6 col-sm-12">
+          <div class="investments-image">
+            <img
+              src="{{organization.image}}"
+              alt=""
+            />
+          </div>
+          <p class="text-center my-3 fw-bold">
+            {{organization.title}}
+          </p>
+        </div>
+      
+      </div>
+    </div>
+
+        <!-- Related Efforts Section -->
+    <div *ngIf="type == 'efforts'" class="container my-5">
+      <span>Nonprofits helping the Palestinian economy</span>
+      <p [innerHtml] = 'description'>
+        
+      </p>
+      <div *ngFor="let effort of efforts" class="row align-items-center article">
+        <div class="col-lg-6 col-sm-12">
+          <article>
+            <span class="article-title">{{effort.title}}</span>
+            <p class="article-details my-3" [innerHtml] = 'effort.description'>
+            
+            </p>
+            <p class="kiva"><a href="{{effort.link}}">{{effort.link_title}}</a></p>
+          </article> 
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="article-image">
+            <img src="{{effort.image}}" alt="" />
+          </div>
+        </div>
+      </div>
+    
+      <p class="my-5 contact">
+        If you are interested in investing or donating to the Presbyterian
+        Foundation, explore details by contacting:
+      </p>
+      <ul>
+        <li>Presbyterian Foundation</li>
+        <li>200 East Twelfth Street</li>
+        <li>Jeffersonville, Indiana 47130</li>
+        <li><span>Toll free:</span> 1-800-858-6127</li>
+      </ul>
+      <p class="my-5 videos">Presbyterian Foundation Videos:</p>
+      <div class="row">
+        <div *ngFor="let video of videos" class="col-lg-4">
+          <div class="video-image" style="position: relative">
+            <img
+              src="{{video.image}}"
+              alt=""
+            />
+            <a href="{{video.link}}" target="_blank">
+              <img
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                "
+                src="assets/images/Play.png"
+                alt="play"
+              />
+            </a>
+          </div>
+          <p class="text-center my-3 fw-bold">
+            {{video.title}}
+          </p>
+          <div class="start-btn text-center button">
+            <a href="{{video.link}}" target="_blank">Start</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div *ngIf="type == 'buy_palestinian'" class="container container_buy_palestinian my-5">
+      <span>Buy Palestinian in the U.S.</span>
+      <div class="row my-5 row-gap-sm-5">
+        <div class="row my-5 row-gap-sm-5">
+          <div *ngFor="let buy_palestinian of buy_palestinians" class="col-md-4 col-sm-12 article">
+            <div class="article-image">
+              <img src="{{buy_palestinian.image}}" alt="" />
+            </div>
+            <article class="article-details">
+              <!-- <p> -->
+                <p [innerHtml] = 'buy_palestinian.description'></p>
+                <!-- <a href="#" style="color: #6a994e">website</a> -->
+              <!-- </p> -->
+            </article>
+            <a href="#" class="article-link">
+              <img
+                style="padding-right: 5px"
+                src="assets/resources-images/link-icon.png"
+                alt=""
+              />
+              {{buy_palestinian.link}}
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>

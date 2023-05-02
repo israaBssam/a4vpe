@@ -1,0 +1,95 @@
+<section class="hero">
+      <a class="add-company" href="add-company">
+        <button>+ Add Your Company</button>
+      </a>
+      <div class="overlay">
+        <div class="company-guide">
+          <h2>Company Guide</h2>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="input-group mb-3 mt-2">
+        <i
+          class="fa-solid fa-magnifying-glass icon"
+          style="
+            position: absolute;
+            z-index: 1;
+            margin-top: 20px;
+            padding-left: 10px;
+          "
+        ></i
+        ><input
+          (keyup.enter)="Search(1)"
+          [(ngModel)] = 'text_search'
+          type="text"
+          class="form-control search"
+          aria-label="Text input with dropdown button"
+          placeholder="Search for the company name"
+        />
+        <!-- <button
+          class="btn btn-outline-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Region
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul> -->
+      </div>
+    </div>
+
+    <!-- Company Guide Section -->
+    <div class="container">
+      <div class="row">
+        <section class="company-guide-section">
+          <section class="row">
+            <div *ngFor="let row of details" class="company-guide-item col-md-4 mt-9 pr-3">
+              <div>
+                <img
+                  src="{{row.logo}}"
+                  alt=""
+                />
+              </div>
+              <div>
+                <p>{{row.name}}</p>
+                <div class="company-guide-details">
+                  <div class="company-guide-info">
+                    <img src="assets/images/Info Circle.png" alt="" />
+                    <span>{{row.employment}}</span>
+                  </div>
+                  <div class="company-guide-location">
+                    <img src="assets/images/Location.png" alt="" />
+                    <span>{{row.street}}</span>
+                  </div>
+                  <div class="company-guide-info">
+                    <img src="assets/images/Call.png" alt="" />
+                    <span>{{row.mobile}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="company-guide-social">
+                <div class="company-guide-social-icons">
+                  <a   *ngFor="let social_link of socialLinks" href="{{row.social_links[social_link.id]}}"><img src="{{social_link.icon}}" alt=""/></a>
+                  
+                </div>
+                <div class="read-more">
+                  <img src="assets/images/right-arrow.png" alt="" />
+                  <a [routerLink]="['/company-guide/'+row.id]" href="javascript:;">Read More</a>
+                </div>
+              </div>
+            </div>
+            
+            <div  class="btn-read-more" *ngIf="showMore">
+              <button> <a href="javascript:;" (click)="Search(current_page+1)" > Load More </a></button>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>

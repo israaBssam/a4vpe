@@ -1,0 +1,33 @@
+<!-- Hero Image -->
+    <section class="hero">
+      <div class="green-background">
+        <div class="content">
+          <div class="article">
+            <span>{{details.donate_form.hero_title}}</span>
+            <p>​To Help Palestinian Small and Medium Enterprises</p>
+            <a class="btn" target="_blank" href="https://www.flipcause.com/secure/cause_pdetails/MTcxNjU2">
+              <button><i class="fa-solid fa-heart px-1"></i> Donate Now</button>
+            </a>
+            <div class="volunteer">
+              <i class="fa-solid fa-arrow-right"></i
+              ><a href="volunteer">​​Volunteer</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="{{details.home_image}}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="gray-background"></div>
+    </section>
+
+    <!-- Donate Section -->
+    <div class="container my-5" id="donate">
+      <iframe style="height:800px; width:94%; border:1px solid #dddddd; " src="https://www.flipcause.com/hosted_widget/hostedWidgetHome/MTUwNTQ2" scrolling="no"></iframe> 
+      <article class="my-5">
+        <p class="my-3" [innerHtml]='details.donate_form'></p>
+      </article>
+    </div>

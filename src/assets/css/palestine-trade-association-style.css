@@ -1,0 +1,146 @@
+.hero {
+    height: 500px;
+    background-image: url('../assets/about-images/hero-img.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero {
+    height: 500px;
+    background-image: url('../assets/about-images/hero-img.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.resources>h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.resources>div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.resources>div>a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.resources>div>a:hover {
+    color: #6A994E;
+    transition: 0.5s;
+}
+
+.active-link {
+    color: #6a994e !important;
+    text-decoration: underline !important;
+}
+
+.container>span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container>p {
+    line-height: 1.7;
+}
+
+.investments-image>img {
+    width: 300px;
+}
+
+@media screen and (max-width: 912px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .resources>h2 {
+        margin-bottom: 20px;
+    }
+
+    .resources>div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .investments-image {
+        text-align: center;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .investments-image>img {
+        width: 250px;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 14px;
+    }
+}

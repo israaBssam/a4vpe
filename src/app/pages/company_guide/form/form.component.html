@@ -1,0 +1,287 @@
+    <!-- Hero Image Section -->
+    <section class="hero">
+      <div class="overlay">
+        <div class="title">
+          <h2>Add Your Company</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Data Section -->
+    <div class="container">
+      <section class="company-data">
+        <span>Company Data</span>
+        <div class="wrapper">
+          <div class="upload-company-logo">
+            <p>Select Company Logo *</p>
+            <form >
+              <label for="file-input" class="file-input">
+                <img *ngIf="!imageSrc"
+                  src="assets/images/company-guides-images/Camera.png"
+                  width="30"
+                />
+                <img
+                *ngIf="imageSrc"
+                  [src]="imageSrc"
+                  width="150"
+                  height = "150"
+                />
+                <input id="file-input" type="file" (change)="submitUpload($any($event));" />
+              </label>
+            </form>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >The Company's name *</label
+                >
+                <input
+                 name="name"  [(ngModel)]="item.name" 
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Company's name"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Company email *</label
+                >
+                <input
+                  name="email"  [(ngModel)]="item.email" 
+                  type="email"
+                  class="form-control"
+                  
+                  placeholder="Company email"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Employment *</label
+                >
+                <input
+                  name="employment"  [(ngModel)]="item.employment" 
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Employment"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Founded a year| *</label
+                >
+                <input
+                  name="founded_year"  [(ngModel)]="item.founded_year" 
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Founded a year"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Website</label
+                >
+                <input
+                  name="website"  [(ngModel)]="item.website" 
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Website"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-success my-5">
+            <hr />
+          </div>
+          <p class="company-contact-information">Company contact information</p>
+          <div class="row my-5">
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Country *</label
+                >
+                <select name="country_id"  [(ngModel)]="item.country_id" class="form-select" aria-label="Default select example">
+                  <option *ngFor="let country of countries" value="{{country.id}}" >{{country.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >City*</label
+                >
+                <select name="city_id"  [(ngModel)]="item.city_id" class="form-select" aria-label="Default select example">
+                   <option *ngFor="let city of cities" value="{{city.id}}" >{{city.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >street *</label
+                >
+                <input
+                  name="street"  [(ngModel)]="item.street"
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Ramallah and Al-Bireh"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Address</label
+                >
+                <input
+                  name="address"  [(ngModel)]="item.address"
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Address - Floor Building"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >phone number</label
+                >
+                <input
+                  name="phone"  [(ngModel)]="item.phone"
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="020-000-000"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >mobile number *</label
+                >
+                <input
+                  name="mobile"  [(ngModel)]="item.mobile"
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="05x-000-0000"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="socialLinks" class="text-success my-5">
+            <hr />
+          </div>
+          <p *ngIf="socialLinks" class="company-contact-information">Company social links</p>
+          <div *ngIf="socialLinks" class="row">
+            <div class="col-lg-4 col-sm-12" *ngFor="let socialLink of socialLinks">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >{{socialLink.name}} URL</label
+                >
+                <input
+                 name="{{socialLink.name}}"  [(ngModel)]="item.social_links[socialLink.id]" 
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="{{socialLink.name}} URL"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="text-success my-5">
+            <hr />
+          </div>
+          <p style="margin: 0" class="company-contact-information">
+            Description of the company *
+          </p>
+          <span>An overview of the activity of the company / institution</span>
+          <div class="mt-5">
+            <textarea
+              name="description"  [(ngModel)]="item.description"
+              placeholder=""
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="text-success my-5">
+            <hr />
+          </div>
+          <p style="margin: 0" class="company-contact-information">
+            The company's location on the map *
+          </p>
+          <span>This site will appear in the company directory</span>
+          <p style="color: red" class="my-4">
+            Determining the exact address will facilitate the public's access to
+            your company's headquarters
+          </p>
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >longitude*</label
+                >
+                <input
+                  name="location_longitude"  [(ngModel)]="item.location_longitude"
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="longitude"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="mb-3">
+                <label  class="form-label"
+                  >Latitude*</label
+                >
+                <input
+                  name="location_latitude"  [(ngModel)]="item.location_latitude"
+                  type="text"
+                  class="form-control"
+                  
+                  placeholder="Latitude"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mapouter">
+            <div class="gmap_canvas my-5">
+              <iframe
+                width="100%"
+                height="700"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=palestine&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe>
+            </div>
+          </div>
+          <div class="text-center">
+            <button (click)="onSubmit()" class="save-btn p-3">
+              Save and create a company record
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>

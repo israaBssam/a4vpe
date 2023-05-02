@@ -1,0 +1,203 @@
+    <!-- Hero Image Section -->
+    <section class="hero">
+      <article>
+        <h1>{{details.slider_home.title}}</h1>
+        <div>
+          <p class="my-3">
+            {{details.slider_home.description}}
+          </p>
+        </div>
+        <div class="cta">
+          <a href="support-AVPE.html" class="donate">Donate</a>
+          <a href="contactus.html" class="join">Join Us Today</a>
+        </div>
+      </article>
+      <div class="slider_home">
+        <p-carousel [value]="details.home_sliders" [showIndicators]="false" [numVisible]="1"  orientation="vertical" verticalViewPortHeight="650px">
+            <ng-template let-slider pTemplate="item">
+                <img  class="slider_img" src="{{slider.image}}" alt="orig" />
+            </ng-template>
+        </p-carousel>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <div class="aboutus-header">
+      <p class="my-3">What We Do</p>
+      <p style="    width: 14%;">
+        {{details.what_we_do.title}}
+      </p>
+    </div>
+    <div class="container">
+      <section class="aboutus-section">
+        <article >
+          <p [innerHtml]='details.what_we_do.description'></p>
+        </article>
+        <div style="position: relative">
+          <img src="assets/images/Mask Group 2.png" alt="group" />
+          <a href="javascript:;" (click) = "openVideo()">
+            <img
+              style="
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              "
+              src="assets/images/Play.png"
+              alt="play"
+            />
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Company Guide Section -->
+    <div class="container my-5" *ngIf="details.companies_guides">
+      <h2 class="company-guide-title my-3">Company guide</h2>
+      <section class="company-guide">
+        <div class="company-guide-item" *ngFor="let guide of details.companies_guides">
+          <div>
+            <img src="{{guide.logo}}" alt="alrozana" />
+          </div>
+          <div>
+            <p>{{guide.name}}</p>
+            <div class="company-guide-details">
+              <div class="company-guide-info">
+                <img src="assets/images/Info Circle.png" alt="" />
+                <span>{{guide.employment}}</span>
+              </div>
+              <div class="company-guide-location">
+                <img src="assets/images/Location.png" alt="" />
+                <span>{{guide.street}}</span>
+              </div>
+              <div class="company-guide-info">
+                <img src="assets/images/Call.png" alt="" />
+                <span>{{guide.mobile}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="company-guide-social">
+            <div class="company-guide-social-icons">
+              <a   *ngFor="let social_link of details.socialLinks" href="{{guide.social_links[social_link.id]}}"
+                ><img src="{{social_link.icon}}" alt=""
+              /></a>
+              <!-- <a href=""
+                ><img src="assets/images/facebook (5).png" alt=""
+              /></a>
+              <a href=""><img src="assets/images/instgram.png" alt="" /></a> -->
+            </div>
+            <div class="read-more">
+              <img src="assets/images/right-arrow.png" alt="" />
+              <a [routerLink]="['/company-guide/'+guide.id]" href="javascript:;" >Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="btn-read-more">
+        <button> <a href="companies-guides"> Read More</a></button>
+      </div>
+    </div>
+
+    <!-- Success Stories Section -->
+    <div class="container" *ngIf="details.success_stories">
+      <div class="success-stories-title my-5">
+        <h2>Success Stories</h2>
+        <!-- <div>
+          <a style="color: #000" href="" class="left-arrow">
+            <i class="fa-solid fa-angle-left"></i>
+          </a>
+          <a href="" class="right-arrow">
+            <i style="text-align: center" class="fa-solid fa-angle-right"></i>
+          </a>
+        </div> -->
+      </div>
+      <section class="success-stories">
+        <p-carousel [value]="details.success_stories" [showIndicators]="false" [numVisible]="2">
+            <ng-template let-story pTemplate="item">
+                <article>
+                  <p>
+                    {{story.description}}
+                  </p>
+                  <div>
+                    <div>
+                      <img src="{{story.publisher_image}}" alt="" />
+                      <div>
+                        <span>{{story.publisher}}</span>
+                        <span>{{story.job_title}}</span>
+                      </div>
+                      <div class="icon">
+                        <i class="fa-solid fa-quote-right fa-2x"></i>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+            </ng-template>
+        </p-carousel>
+      </section>
+    </div>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+      <article>
+          <p>Making a Difference for Our Partners</p>
+      </article>
+      <p-carousel [value]="details.partners" [showIndicators]="false" [numVisible]="1">
+        <ng-template let-partner pTemplate="item">
+            <article>
+              <div class="avatar">
+                <img src="{{partner.image}}" alt="" />
+              </div>
+              <blockquote>
+                {{partner.description}}
+              </blockquote>
+              <p>{{partner.title}}</p>
+            </article>
+          </ng-template>
+        </p-carousel>
+     <!--  <div class="left-right-arrow">
+        <a style="color: #000" href="" class="left-arrow">
+          <i class="fa-solid fa-angle-left"></i>
+        </a>
+        <a href="" class="right-arrow">
+          <i style="color: #000" class="fa-solid fa-angle-right"></i>
+        </a>
+      </div> -->
+    </section>
+
+    <!-- Our Community Section -->
+    <div class="container">
+      <div class="row">
+        <section class="our-community">
+          <h2>Our Community</h2>
+          <div class="comunity-div">
+            <p-carousel [value]="details.our_community" [showNavigators]="false" [autoplayInterval]="3000" [showIndicators]="false" [numVisible]="5">
+              <ng-template let-item pTemplate="item" class="comunity-div">
+                  <div>
+                    <img src="{{item.image}}" alt="" />
+                  </div>
+                </ng-template>
+              </p-carousel>
+            
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Sign Up Section -->
+    <section class="signup">
+      <div class="polygon-icon">
+        <img src="assets/images/Polygon 2.png" alt="" />
+      </div>
+      <h2>Sign Up!</h2>
+      <p>
+        Sign up to receive our newsletter, get business support, or join our
+        network of volunteers
+      </p>
+      <div class="signup-btn">
+        <button>Join Us In Building Bridges</button>
+      </div>
+      <div class="dots-pattern">
+        <img src="assets/images/Dots Pattern.png" alt="" />
+      </div>
+    </section>

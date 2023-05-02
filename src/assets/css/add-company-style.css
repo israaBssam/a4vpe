@@ -1,0 +1,138 @@
+.hero {
+    height: 500px;
+    background-image: url('../assets/company-guides-images/mortgage-application.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.title>h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.company-data {
+    margin: 5% 0;
+}
+
+.container>.company-data>span,
+.company-contact-information {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.container>.company-data>.wrapper {
+    border: 1px solid var(--grey-color);
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 70px;
+
+}
+
+.container>.company-data>.wrapper>.upload-company-logo {
+    margin-bottom: 70px;
+}
+
+.container>.company-data>.wrapper>.upload-company-logo>p {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 20px;
+    margin: 1% auto;
+}
+
+.file-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #a9a9a9;
+    cursor: pointer;
+}
+
+.file-input span {
+    margin-top: 10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.company-contact-information {
+    margin-top: 50px;
+}
+
+.form-control,
+.form-select {
+    padding: 15px;
+}
+
+hr {
+    margin: 4rem 0;
+}
+
+.save-btn {
+    background: var(--green-color);
+    border: none;
+    border-radius: 10px;
+    color: var(--white-color);
+    width: 600px;
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 912px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .save-btn {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    /* Footer */
+    .get-started-info {
+        margin-top: 20px;
+    }
+
+    .top {
+        bottom: 80px;
+        right: 20px;
+    }
+
+    .copy-write {
+        position: static;
+        font-size: 0.9em;
+    }
+}

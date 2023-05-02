@@ -1,0 +1,66 @@
+    <!-- Hero Image Section -->
+    <section class="hero">
+      <div class="overlay">
+        <div class="title">
+          <h2>Success Stories</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Successfull Stories Section -->
+    <div class="container">
+      <h2 class="text-center my-5 fw-bold success-stories-title">
+        Our ​Successfull Stories
+      </h2>
+      <p class="text-center">
+        AVPE Has Generated Over A Dozen Projects Building Bridges Between
+        American And Palestinian Business People.
+      </p>
+      <section class="success-stories my-5">
+        <div class="row align-items-center row-gap-sm-5">
+          <div class="row align-items-center row-gap-sm-5" *ngFor="let item of details;let o = odd;let e = even">
+            <div  *ngIf="o" class="col-lg-6 col-sm-12">
+              <article class="article">
+                <span class="article-title">{{item.title}}</span>
+                <p class="my-3 article-details">
+                  {{item.description}}
+                </p>
+                <div class="read-more">
+                  <a href="javascript:;" [routerLink]="['/success-story/'+item.id]">Read More</a>
+                  <i class="fa-solid fa-angle-right icon"></i>
+                </div>
+              </article>
+            </div>
+            <div *ngIf="o" class="col-lg-6 col-sm-12">
+              <div  class="success-stories-image">
+                <img
+                  src="{{item.image}}"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div *ngIf="e" class="reverse-column d-lg-flex align-items-lg-center">
+              <div class="col-lg-6 col-sm-12">
+                <div class="success-stories-image reverse-image">
+                  <img
+                    src="{{item.image}}"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-12">
+                <article class="article-reverse">
+                  <span class="article-title">{{item.title}}</span>
+                  <p class="my-3 article-details">{{item.description}}
+                  </p>
+                  <div class="read-more">
+                    <a href="javascript:;" [routerLink]="['/success-story/'+item.id]">Read More</a>
+                    <i class="fa-solid fa-angle-right icon"></i>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>         
+        </div>
+      </section>
+    </div>

@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+.slider_home .p-carousel-prev,.slider_home .p-carousel-next{
+    top: 41% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    row-gap: 21px;
+    position: absolute !important;
+    right: 103% !important;
+    width: 38px !important;
+    height: 38px !important;
+    color: var(--white-color) !important;
+    background-color: var(--green-color) !important;
+    padding: 11px !important;
+    border-radius: 32px !important;
+    justify-content: center !important;
+}
+.slider_home{
+        margin-left: 6%;
+}
+.slider_home  .p-carousel-next{
+    top: 50% !important;
+}
+
+li.selected {
+    background: #03A9F4 !important;
+}
+
+.home_video{
+    width: 100%;
+}
+.success-stories .p-carousel-prev,.success-stories .p-carousel-next{
+
+    color: var(--white-color) !important;
+    background-color: var(--green-color) !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+}
+.testimonial .p-carousel-item {
+        display: flex !important;
+    justify-content: center !important;
+}
+.testimonial .p-carousel-container {
+    justify-content: center !important;
+}
+.testimonial .p-carousel-items-content{
+    width: 50% !important; 
+}

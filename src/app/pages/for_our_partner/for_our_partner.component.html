@@ -1,0 +1,143 @@
+    <!-- Hero Image Section -->
+    <section class="hero">
+      <div class="overlay">
+        <div class="export-circles">
+          <h2>Our Services</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <div class="container my-5">
+      <p class="my-5 overview" [innerHtml] ="details.our_services_description">
+        ​
+      </p>
+      <div class="card-column">
+        <div class="card-row">
+          <div class="card" [innerHtml] ="details.five_services[0].description">
+            
+          </div>
+          <div class="card card-center" [innerHtml] ="details.five_services[1].description">
+           
+          </div>
+          <div class="card" [innerHtml] ="details.five_services[2].description">
+            
+          </div>
+        </div>
+        <div class="card-row second-row" >
+          <div class="card" [innerHtml] ="details.five_services[3].description">
+            
+          </div>
+          <div class="card" [innerHtml] ="details.five_services[4].description">
+            <p>
+              SAMPLE DELIVERY to American consumers and distribution channels.
+            </p>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-center fw-bold my-5">How we work</h2>
+      <section class="services-section" *ngFor="let item of details.how_we_works;let o = odd;let e = even">
+          <section class="main-section" *ngIf="e">
+            <div class="service-image">
+              <img
+                src="{{item.image}}"
+                alt=""
+              />
+            </div>
+            <article class="service-details">
+              <p>
+                {{item.description}}
+              </p>
+            </article>
+          </section>
+          <section class="main-section" *ngIf="o">
+            <article class="service-details">
+              <p>
+               {{item.description}}
+              </p>
+            </article>
+            <div class="service-image">
+              <img
+                src="{{item.image}}"
+                alt=""
+              />
+            </div>
+          </section>
+         <!--  <section class="main-section reverse-column" *ngIf="o">
+            <div class="service-image">
+              <img
+                src="{{item.image}}"
+                alt=""
+              />
+            </div>
+            <article class="service-details">
+              <p>
+                 {{item.description}}
+              </p>
+            </article>
+          </section> -->
+          <!-- <section class="main-section">
+            <article class="service-details">
+              <p>
+                Complete a project initiation application and be interviewed by
+                our staff to ensure we can access the specificresources you are
+                requesting. You will be asked to provide a compelling description
+                of your request and your business venture so that it generates
+                interest when circulated among AVPE's networks
+              </p>
+            </article>
+            <div class="service-image">
+              <img
+                src="assets/company-guides-images/mortgage-application-home-loan-concept.png"
+                alt=""
+              />
+            </div>
+          </section> -->
+      </section>
+      
+
+      <div class="social-info my-5">
+        <div class="contact">
+          <div class="contact-btn">
+            <button>​​I am Palestinian Business</button>
+          </div>
+          <div class="contact-info my-4">
+            <p>Email</p>
+            <p>poo@a4vpe.org</p>
+            <p>Office</p>
+            <p>+1.847.656.5814</p>
+            <p>Cell/Whatsapp</p>
+            <p>+1.608.770.9955</p>
+            <p>Fax</p>
+            <p>+1.847.656.5801</p>
+            <p>AVPE</p>
+            <p>
+              2700 Patriot Blvd, Suite 250 <br />
+              Glenview, IL 60026 <br />
+              USA
+            </p>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="contact-btn">
+            <button>​​​I am American Business</button>
+          </div>
+          <div class="contact-info my-4">
+            <p>Email</p>
+            <p>poo@a4vpe.org</p>
+            <p>Office</p>
+            <p>+1.847.656.5814</p>
+            <p>Cell/Whatsapp</p>
+            <p>+1.608.770.9955</p>
+            <p>Fax</p>
+            <p>+1.847.656.5801</p>
+            <p>AVPE</p>
+            <p>
+              2700 Patriot Blvd, Suite 250 <br />
+              Glenview, IL 60026 <br />
+              USA
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>

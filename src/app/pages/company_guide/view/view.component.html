@@ -1,0 +1,186 @@
+  <!-- Hero Image Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <a class="add-company" href="add-company">
+      <button>+ Add Your Company</button>
+    </a>
+    <div class="search">
+      <i
+        class="fa-solid fa-magnifying-glass"
+        style="
+          position: absolute;
+          z-index: 1;
+          margin-top: 20px;
+          padding-left: 10px;
+          color: #fff;
+        "
+      ></i>
+      <input type="text" placeholder="Search for the company name" />
+    </div>
+    <div class="support-share-profile-btns">
+      <!-- <button>Support</button> -->
+      <button (click)="shareSocialMedia()">
+        <img src="assets/images/company-guides-images/share.png" alt="" />
+        Share Profile
+      </button>
+      
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <div class="container">
+    <section class="about">
+      <article>
+        <div class="about-img">
+          <img
+            src="{{item.logo}}"
+            alt=""
+          />
+        </div>
+        <div class="social-info">
+          <span>{{item.name}}</span>
+          <p>{{item.employment}}</p>
+          <div class="company-guide-location">
+            <img src="assets/images/Location.png" alt="" />
+            <span>{{item.street}}</span>
+          </div>
+          <div class="company-guide-info">
+            <img src="assets/images/Call.png" alt="" />
+            <span>{{item.mobile}}</span>
+          </div>
+          <div class="company-guide-social-icons">
+            <a *ngFor="let social_link of socialLinks" href="{{item.social_links[social_link.id]}}"
+              ><img src="{{social_link.icon}}" alt=""
+            /></a>
+    
+          </div>
+          <!-- <div class="views-likes">
+            <a href=""
+              ><img src="assets/images/company-guides-images/views.png" alt=""
+            /></a>
+            <span>(6773)</span>
+            <a href=""
+              ><img src="assets/images/company-guides-images/likes.png" alt=""
+            /></a>
+            <span>(15)</span>
+          </div> -->
+        </div>
+      </article>
+      <article>
+        <span>About</span>
+        <p>
+          {{item.description}}
+        </p>
+      </article>
+    </section>
+  </div>
+
+  <!-- Location Details -->
+  <div class="container">
+    <section class="location-details">
+      <div class="contact-info-row">
+        <div class="contact-info">
+          <span>details</span>
+          <div class="details-info-row" *ngIf="item.phone">
+            <div class="details-row">
+              <img src="assets/images/Call.png" alt=""  />
+              <span>Phone number</span>
+            </div>
+          </div>
+          <div class="details-info-row"  *ngIf="item.mobile">
+            <div class="details-row">
+              <img src="assets/images/company-guides-images/mobile.png" alt="" />
+              <span>Mobile number</span>
+            </div>
+          </div>
+          <div class="details-info-row" *ngIf="city">
+            <div class="details-row">
+              <img src="assets/images/Location.png" alt="" />
+              <span>city</span>
+            </div>
+          </div>
+          <div class="details-info-row">
+            <div class="details-row">
+              <img src="assets/images/Location.png" alt="" />
+              <span>Street</span>
+            </div>
+          </div>
+          <div class="details-info-row">
+            <div class="details-row">
+              <img src="assets/images/Info Circle.png" alt="" />
+              <span>Business sector information</span>
+            </div>
+          </div>
+          <div class="details-info-row">
+            <div class="details-row">
+              <img
+                src="assets/images/company-guides-images/Calendar.png"
+                alt=""
+              />
+              <span>Established</span>
+            </div>
+          </div>
+          <div class="details-info-row">
+            <div class="details-row">
+              <img src="assets/images/company-guides-images/Message.png" alt="" />
+              <span>Email</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-info contact-info-column">
+          <div class="details-info-row" *ngIf="item.phone">
+            <div class="details-row">
+              <span>{{item.phone}}</span>
+            </div>
+          </div>
+          <div class="details-info-row" *ngIf="item.mobile">
+            <div class="details-row">
+              <span>{{item.mobile}}</span>
+            </div>
+          </div>
+          <div class="details-info-row" *ngIf="city">
+            <div class="details-row">
+              <span>{{city}}</span>
+            </div>
+          </div>
+          <div class="details-info-row">
+            <div class="details-row">
+              <span>{{item.street}}</span>
+            </div>
+          </div>
+          <div class="details-info-row employment-info">
+            <div class="details-row">
+              <span>{{item.employment}}</span>
+            </div>
+          </div>
+          <div class="details-info-row ">
+            <div class="details-row">
+              <span >{{item.founded_year}}</span>
+            </div>
+          </div>
+          <div class="details-info-row">
+            <div class="details-row">
+              <span>{{item.email}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <google-map 
+
+            width="900px"
+            height="500px"
+            id="gmap_canvas"
+            [center]="center"
+            [zoom]="zoom">
+            <map-marker #marker="mapMarker"
+              *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              (mapClick)="openInfoWindow(marker)"></map-marker>
+  <map-info-window>Info Window content</map-info-window>
+          </google-map>
+        </div>
+      </div>
+    </section>
+  </div>

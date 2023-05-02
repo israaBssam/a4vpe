@@ -1,0 +1,331 @@
+
+.active-link {
+    color: #6A994E !important;
+}
+
+.major_inv_hero {
+    height: 500px;
+    background-image: url('src/assets/images/about-images/hero-img.png');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.resources>h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.resources>div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.resources>div>a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.resources>div>a:hover {
+    color: #6A994E;
+    transition: 0.5s;
+}
+
+.active-link {
+    color: #6a994e !important;
+    text-decoration: underline !important;
+}
+
+.container>span,
+.banks {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container>p {
+    margin-top: 10px;
+}
+
+.investments-image>img {
+    width: 100%;
+}
+
+@media screen and (max-width: 912px) {
+
+    .resources>h2 {
+        margin-bottom: 20px;
+    }
+
+    .resources>div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .investments-image {
+        text-align: center;
+    }
+
+    .banks {
+        text-align: center;
+    }
+
+}
+
+
+
+.resources>h2 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.resources>div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.resources>div>a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.resources>div>a:hover {
+    color: #6A994E;
+    transition: 0.5s;
+}
+
+.active-link {
+    color: #6a994e !important;
+    text-decoration: underline !important;
+}
+
+.container>span {
+    font-size: 18px;
+}
+
+.text-red-underlined ,.text-red-underlined>a{
+    color: #E67139 !important;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 912px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .resources>h2 {
+        margin-bottom: 20px;
+    }
+
+    .resources>div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .investments-image {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .btn-contctus>button {
+        width: 120px;
+        height: 48px;
+        font-size: 1em;
+    }
+
+    .investments-image>img {
+        width: 250px;
+    }
+
+}
+
+
+
+
+
+.resources_buy_palestine>h2 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--white-color);
+}
+
+.resources_buy_palestine>div {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.resources_buy_palestine>div>a {
+    font-size: 1.25em;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.resources_buy_palestine>div>a:hover {
+    color: var(--green-color) !important;
+    transition: 0.5s !important;
+}
+
+.container_buy_palestinian>span {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-color);
+    font-size: 2.25em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--black-color);
+}
+
+.text-caanan {
+    position: absolute;
+    top: 150px;
+    left: 90px;
+    color: var(--white-color);
+    font-size: 2.25em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--black-color);
+}
+
+.article-link {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--black-color);
+    background: var(--white-color);
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+.article {
+    position: relative;
+}
+
+.article-image>img {
+    width: 100%;
+}
+
+.article-details {
+    position: absolute;
+    width: 81%;
+    left: 82px;
+    bottom: -10px;
+    background: var(--white-color);
+    font-family: "nunito";
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 32px;
+    font-style: normal;
+    text-align: left;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 912px) {
+
+    .resources_buy_palestine>h2 {
+        margin-bottom: 20px !important;
+    }
+
+    .resources_buy_palestine>div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .article-details {
+        position: static;
+        width: 100%;
+    }
+
+    .text {
+        top: 36%;
+    }
+
+    .text-caanan {
+        top: 32%;
+        left: 20%;
+        color: var(--white-color);
+        font-size: 1.9em;
+    }
+
+    .row {
+        row-gap: 70px;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+
+    .article-details {
+        width: 280px;
+        left: 50px;
+        bottom: -70px;
+    }
+
+    .text {
+        top: 25%;
+        font-size: 1.3em;
+    }
+
+    .text-caanan {
+        top: 25%;
+        font-size: 1.3em !important;
+    }
+
+    .final-article {
+        margin-bottom: 100px;
+    }
+}
